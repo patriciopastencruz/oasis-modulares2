@@ -22,11 +22,17 @@
       <a class="brand" href="#inicio" aria-label="Oasis Modulares inicio">
         <img src="assets/logo-oasis-modulares-header.png" alt="Oasis Modulares">
       </a>
-      <nav>
+      <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="primary-navigation">
         <a href="#nosotros">Nosotros</a>
         <a href="#modelos">Modelos</a>
-        <a href="#galeria">Galería</a>
+        <a href="#proyectos">Proyectos</a>
         <a href="#proceso">Proceso</a>
+        <a href="#preguntas">Preguntas Frecuentes</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </header>
@@ -41,13 +47,13 @@
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-content">
           <p class="eyebrow">Diseño modular para vivir, trabajar o invertir</p>
-          <h1>Espacios modulares listos para llegar donde los necesitas.</h1>
+          <h1>Construimos espacios que impulsan tus proyectos</h1>
           <p class="hero-copy">
             Fabricamos módulos habitacionales, oficinas y proyectos a medida con terminaciones modernas,
             instalación eficiente y asesoría desde la idea hasta la entrega.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#contacto">Cotizar proyecto</a>
+            <a class="button primary" href="#contacto">Cotizar Proyecto</a>
             <a class="button secondary" href="#modelos">Ver soluciones</a>
           </div>
         </div>
@@ -56,7 +62,7 @@
       <section class="section intro" id="nosotros" aria-label="Nosotros">
         <div>
           <p class="eyebrow">Nosotros</p>
-          <h2>Fabricamos e importamos soluciones modulares para proyectos de distintas escalas.</h2>
+          <h2>Fabricamos e importamos soluciones modulares para proyectos de distintas escalas</h2>
         </div>
         <div class="benefits">
           <article>
@@ -110,12 +116,40 @@
             </div>
           </article>
         </div>
+        <div class="mission-vision" aria-label="Misión, visión y valores de Oasis Modulares">
+          <article class="mission-card">
+            <span>Misión</span>
+            <h3>Entregar soluciones modulares confiables para la zona norte del país</h3>
+            <p>
+              Brindamos espacios modulares de alta calidad, con estándares técnicos sólidos y una atención
+              cercana, adaptando cada proyecto a las necesidades de vivienda, trabajo, almacenamiento e
+              industria de nuestros clientes.
+            </p>
+          </article>
+          <article class="mission-card">
+            <span>Visión</span>
+            <h3>Ser un referente en construcción modular eficiente, flexible y duradera</h3>
+            <p>
+              Buscamos consolidarnos como una empresa líder en soluciones modulares para el norte de Chile,
+              reconocida por su calidad, rapidez de respuesta y capacidad para desarrollar proyectos a medida
+              en sectores particulares, comerciales, industriales y mineros.
+            </p>
+          </article>
+          <article class="mission-card">
+            <span>Valores</span>
+            <h3>Calidad, compromiso y confianza en cada solución modular</h3>
+            <p>
+              Trabajamos con responsabilidad, transparencia y orientación al cliente, buscando entregar
+              espacios seguros, funcionales y adaptados a las necesidades reales de cada proyecto.
+            </p>
+          </article>
+        </div>
       </section>
 
       <section class="section solutions" id="modelos">
         <div class="section-heading">
           <p class="eyebrow">Modelos</p>
-          <h2>Productos disponibles para venta.</h2>
+          <h2>Productos disponibles para venta</h2>
         </div>
         <div class="product-carousel" data-carousel>
           <button class="carousel-arrow prev" type="button" aria-label="Ver productos anteriores">‹</button>
@@ -168,18 +202,162 @@
                 <p class="product-reserve">Reserva $100.000</p>
               </div>
             </a>
+            <a class="product-card" href="producto-oficina-modular-importada.html">
+              <span class="price-tag">Precio Web</span>
+              <img src="assets/producto-3-oficina-importada.jpg" alt="Oficina modular importado de 6 por 3 metros">
+              <div class="product-card-body">
+                <span class="product-code">OM-IMP-6X3</span>
+                <h3>Oficina Modular (Importado)</h3>
+                <ul class="product-specs" aria-label="Medidas">
+                  <li class="measure measure-width" aria-label="3.0 metros de ancho">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>3.0 m</span>
+                  </li>
+                  <li class="measure measure-length" aria-label="6.0 metros de largo">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>6.0 m</span>
+                  </li>
+                  <li class="measure measure-height" aria-label="2.8 metros de alto">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>2.8 m</span>
+                  </li>
+                </ul>
+                <p class="product-price">desde <strong>$3.790.000</strong> + IVA</p>
+                <p class="product-reserve">Reserva $100.000</p>
+              </div>
+            </a>
+            <a class="product-card" href="producto-habitacion-modular.html">
+              <span class="price-tag">Precio Web</span>
+              <img src="assets/producto-4-habitacion-modular.jpg" alt="Modular con baño importado">
+              <div class="product-card-body">
+                <span class="product-code">OM-BAÑO-IMP</span>
+                <h3>Modular con Baño (Importado)</h3>
+                <ul class="product-specs" aria-label="Medidas">
+                  <li class="measure measure-width" aria-label="3.0 metros de ancho">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>3.0 m</span>
+                  </li>
+                  <li class="measure measure-length" aria-label="6.0 metros de largo">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>6.0 m</span>
+                  </li>
+                  <li class="measure measure-height" aria-label="2.8 metros de alto">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>2.8 m</span>
+                  </li>
+                </ul>
+                <p class="product-price">desde <strong>$4.980.000</strong> + IVA</p>
+                <p class="product-reserve">Reserva $100.000</p>
+              </div>
+            </a>
+            <a class="product-card" href="producto-habitacion-modular-con-bano.html">
+              <span class="price-tag">Precio Web</span>
+              <img src="assets/producto-5-habitacion-bano.jpg" alt="Habitacion modular con baño de 4 por 3 metros">
+              <div class="product-card-body">
+                <span class="product-code">OM-HAB-4X3</span>
+                <h3>Habitacion Modular con Baño</h3>
+                <ul class="product-specs" aria-label="Medidas">
+                  <li class="measure measure-width" aria-label="3.0 metros de ancho">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>3.0 m</span>
+                  </li>
+                  <li class="measure measure-length" aria-label="4.0 metros de largo">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>4.0 m</span>
+                  </li>
+                  <li class="measure" aria-label="Baño incluido">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>Baño</span>
+                  </li>
+                </ul>
+                <p class="product-price">desde <strong>$4.490.000</strong> + IVA</p>
+                <p class="product-reserve">Reserva $100.000</p>
+              </div>
+            </a>
+            <a class="product-card" href="producto-oficina-modular-4x3.html">
+              <span class="price-tag">Precio Web</span>
+              <img src="assets/producto-6-oficina-modular-4x3.jpg" alt="Oficina modular de 4 por 3 metros">
+              <div class="product-card-body">
+                <span class="product-code">OM-OF-4X3</span>
+                <h3>Oficina Modular 4x3</h3>
+                <ul class="product-specs" aria-label="Medidas">
+                  <li class="measure measure-width" aria-label="3.0 metros de ancho">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>3.0 m</span>
+                  </li>
+                  <li class="measure measure-length" aria-label="4.0 metros de largo">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>4.0 m</span>
+                  </li>
+                  <li class="measure" aria-label="Planta libre">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>Libre</span>
+                  </li>
+                </ul>
+                <p class="product-price">desde <strong>$2.990.000</strong> + IVA</p>
+                <p class="product-reserve">Reserva $100.000</p>
+              </div>
+            </a>
+            <a class="product-card" href="producto-casa-modular-36m2.html">
+              <span class="price-tag">Precio Web</span>
+              <img src="assets/producto-7-casa-modular-36m2-mejorada.png" alt="Casa modular de 36 metros cuadrados">
+              <div class="product-card-body">
+                <span class="product-code">OM-CASA-36</span>
+                <h3>Casa Modular 36 mt2</h3>
+                <ul class="product-specs" aria-label="Medidas">
+                  <li class="measure measure-width" aria-label="6.0 metros de ancho">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>6.0 m</span>
+                  </li>
+                  <li class="measure measure-length" aria-label="6.0 metros de largo">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>6.0 m</span>
+                  </li>
+                  <li class="measure measure-height" aria-label="2.8 metros de alto">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>2.8 m</span>
+                  </li>
+                </ul>
+                <p class="product-price">desde <strong>$8.690.000</strong> + IVA</p>
+                <p class="product-reserve">Reserva $100.000</p>
+              </div>
+            </a>
+            <a class="product-card" href="producto-caseta-seguridad.html">
+              <span class="price-tag">Precio Web</span>
+              <img src="assets/producto-8-caseta-seguridad.jpg" alt="Caseta de seguridad de 2 por 2 metros">
+              <div class="product-card-body">
+                <span class="product-code">OM-CASETA-2X2</span>
+                <h3>Caseta de seguridad</h3>
+                <ul class="product-specs" aria-label="Medidas">
+                  <li class="measure measure-width" aria-label="2.0 metros de ancho">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>2.0 m</span>
+                  </li>
+                  <li class="measure measure-length" aria-label="2.0 metros de largo">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>2.0 m</span>
+                  </li>
+                  <li class="measure measure-height" aria-label="2.5 metros de alto">
+                    <span class="measure-icon" aria-hidden="true"></span>
+                    <span>2.5 m</span>
+                  </li>
+                </ul>
+                <p class="product-price">desde <strong>$990.000</strong> + IVA</p>
+                <p class="product-reserve">Reserva $100.000</p>
+              </div>
+            </a>
           </div>
           <button class="carousel-arrow next" type="button" aria-label="Ver más productos">›</button>
           <div class="carousel-dots" aria-label="Selector de productos"></div>
         </div>
       </section>
 
-      <section class="section gallery" id="galeria">
+      <section class="section gallery" id="proyectos">
         <div class="section-heading">
-          <p class="eyebrow">Galería</p>
-          <h2>Algunos de nuestros proyectos realizados.</h2>
+          <p class="eyebrow">Proyectos</p>
+          <h2>Algunos de nuestros proyectos realizados</h2>
         </div>
-        <div class="gallery-grid" aria-label="Galería de módulos">
+        <div class="gallery-grid" aria-label="Proyectos modulares" data-project-gallery>
           <article class="gallery-item">
             <img src="assets/foto-1-oficina-modular.png" alt="Oficina modular exterior">
             <div>
@@ -222,13 +400,94 @@
               <span>Vivienda modular con espacios interiores listos para habitar.</span>
             </div>
           </article>
+          <article class="gallery-item">
+            <img src="assets/foto-7-casa-modular-terraza.jpg" alt="Casa modular con terraza y patio">
+            <div>
+              <strong>Casa Modular con Terraza</strong>
+              <span>Proyecto residencial modular integrado con espacios exteriores.</span>
+            </div>
+          </article>
+          <article class="gallery-item">
+            <img src="assets/foto-8-modulo-madera.jpg" alt="Módulo modular con terminación exterior tipo madera">
+            <div>
+              <strong>Módulo con Terminación Madera</strong>
+              <span>Proyecto modular con revestimiento cálido y estructura resistente.</span>
+            </div>
+          </article>
+        </div>
+        <div class="project-video">
+          <div>
+            <p class="eyebrow">Video</p>
+            <h3>Proyectos destacados en TikTok</h3>
+          </div>
+          <div class="tiktok-videos">
+            <div class="tiktok-frame">
+              <blockquote
+                class="tiktok-embed"
+                cite="https://www.tiktok.com/@oasismodulareschile/video/7599696254926408967"
+                data-video-id="7599696254926408967"
+              >
+                <section>
+                  <a
+                    href="https://www.tiktok.com/@oasismodulareschile/video/7599696254926408967"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Ver primer video de Oasis Modulares en TikTok
+                  </a>
+                </section>
+              </blockquote>
+            </div>
+            <div class="tiktok-frame">
+              <blockquote
+                class="tiktok-embed"
+                cite="https://www.tiktok.com/@oasismodulareschile/video/7600903175310265618"
+                data-video-id="7600903175310265618"
+              >
+                <section>
+                  <a
+                    href="https://www.tiktok.com/@oasismodulareschile/video/7600903175310265618"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Ver segundo video de Oasis Modulares en TikTok
+                  </a>
+                </section>
+              </blockquote>
+            </div>
+            <div class="tiktok-frame">
+              <blockquote
+                class="tiktok-embed"
+                cite="https://www.tiktok.com/@oasismodulareschile/video/7604834248121666836"
+                data-video-id="7604834248121666836"
+              >
+                <section>
+                  <a
+                    href="https://www.tiktok.com/@oasismodulareschile/video/7604834248121666836"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Ver tercer video de Oasis Modulares en TikTok
+                  </a>
+                </section>
+              </blockquote>
+            </div>
+          </div>
         </div>
       </section>
+
+      <div class="project-lightbox" data-project-lightbox hidden>
+        <button class="project-lightbox-close" type="button" aria-label="Cerrar imagen ampliada">×</button>
+        <figure class="project-lightbox-content">
+          <img src="" alt="">
+          <figcaption></figcaption>
+        </figure>
+      </div>
 
       <section class="section process" id="proceso">
         <div class="section-heading">
           <p class="eyebrow">Proceso</p>
-          <h2>De la cotización a la instalación en cuatro pasos claros.</h2>
+          <h2>De la cotización a la instalación en cuatro pasos claros</h2>
         </div>
         <ol class="steps">
           <li>
@@ -250,10 +509,55 @@
         </ol>
       </section>
 
+      <section class="section faq" id="preguntas" aria-label="Preguntas frecuentes">
+        <div class="section-heading">
+          <p class="eyebrow">Preguntas Frecuentes</p>
+          <h2>Resolvemos las dudas más comunes antes de iniciar tu proyecto</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>¿Fabrican proyectos a medida?</summary>
+            <p>
+              Sí. Desarrollamos módulos y proyectos personalizados para casas, oficinas, bodegas, hoteles,
+              faenas mineras y requerimientos especiales de empresas o particulares.
+            </p>
+          </details>
+          <details>
+            <summary>¿Trabajan solamente en la zona norte?</summary>
+            <p>
+              Nuestro foco principal está en la zona norte del país, especialmente Calama, Antofagasta, La
+              Serena y alrededores. También podemos evaluar proyectos en otras zonas según factibilidad,
+              traslado e instalación.
+            </p>
+          </details>
+          <details>
+            <summary>¿Los módulos se entregan listos para usar?</summary>
+            <p>
+              Dependiendo del modelo y del proyecto, podemos entregar soluciones listas para operar o módulos
+              preparados para instalaciones, terminaciones y adaptaciones específicas.
+            </p>
+          </details>
+          <details>
+            <summary>¿Cómo puedo cotizar?</summary>
+            <p>
+              Puedes completar el formulario de contacto, escribirnos por WhatsApp o indicar el producto que
+              te interesa. Con esa información revisamos medidas, ubicación, uso y requerimientos para orientar
+              la cotización.
+            </p>
+          </details>
+          <details>
+            <summary>¿Qué medios de pago reciben?</summary>
+            <p>
+              Recibimos pagos con tarjeta de crédito, tarjeta de débito, efectivo y transferencia bancaria.
+            </p>
+          </details>
+        </div>
+      </section>
+
       <section class="contact-band" id="contacto">
         <div class="contact-copy">
           <p class="eyebrow">Hablemos</p>
-          <h2>Cuéntanos qué quieres construir.</h2>
+          <h2>Cuéntanos qué quieres construir</h2>
           <p>
             Completa el formulario y recibiremos tu solicitud en nuestro correo. Te responderemos a la
             brevedad con orientación, disponibilidad y próximos pasos.
@@ -264,15 +568,24 @@
           action="https://formsubmit.co/oasismodulares@gmail.com"
           method="POST"
           data-contact-form
+          data-native-submit="true"
         >
           <input type="hidden" name="_subject" value="Nueva solicitud desde Oasis Modulares">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_url" value="https://patriciopastencruz.github.io/oasis-modulares2/#contacto">
+          <input type="hidden" name="_next" value="https://patriciopastencruz.github.io/oasis-modulares2/gracias.html">
           <div class="field full">
             <label for="producto_interes">Producto de interés</label>
             <select id="producto_interes" name="Producto de interés" required>
               <option value="">Selecciona una opción</option>
               <option>Oficina Modular</option>
+              <option>Oficina Modular (Importado)</option>
+              <option>Modular con Baño (Importado)</option>
+              <option>Habitacion Modular con Baño</option>
+              <option>Oficina Modular 4x3</option>
+              <option>Casa Modular 36 mt2</option>
+              <option>Caseta de seguridad</option>
               <option>Bodega Modular</option>
               <option>Casa Modular</option>
               <option>Cabaña Modular</option>
@@ -392,6 +705,7 @@
         </span>
       </div>
     </footer>
+    <script async src="https://www.tiktok.com/embed.js"></script>
     <script src="scripts.js"></script>
   </body>
 </html>

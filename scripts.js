@@ -1,3 +1,49 @@
+document.querySelectorAll(".site-header").forEach((header) => {
+  const toggle = header.querySelector("[data-nav-toggle]");
+  const nav = header.querySelector("nav");
+
+  if (!toggle || !nav) {
+    return;
+  }
+
+  const closeMenu = () => {
+    header.classList.remove("nav-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Abrir menú");
+  };
+
+  const openMenu = () => {
+    header.classList.add("nav-open");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Cerrar menú");
+  };
+
+  toggle.addEventListener("click", () => {
+    if (header.classList.contains("nav-open")) {
+      closeMenu();
+      return;
+    }
+
+    openMenu();
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!header.contains(event.target)) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+  });
+});
+
 document.querySelectorAll("[data-gallery]").forEach((gallery) => {
   const mainImage = gallery.querySelector(".main-product-image img");
   const thumbs = Array.from(gallery.querySelectorAll(".thumb"));
@@ -43,6 +89,70 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
 
   prev.addEventListener("click", () => scrollByCard(-1));
   next.addEventListener("click", () => scrollByCard(1));
+});
+
+document.querySelectorAll("[data-project-gallery]").forEach((gallery) => {
+  const lightbox = document.querySelector("[data-project-lightbox]");
+  const lightboxImage = lightbox?.querySelector("img");
+  const lightboxCaption = lightbox?.querySelector("figcaption");
+  const closeButton = lightbox?.querySelector(".project-lightbox-close");
+  const items = Array.from(gallery.querySelectorAll(".gallery-item"));
+  let lastFocusedItem = null;
+
+  if (!lightbox || !lightboxImage || !lightboxCaption || !closeButton) {
+    return;
+  }
+
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    lightboxImage.src = "";
+    lightboxImage.alt = "";
+    lightboxCaption.textContent = "";
+    document.body.classList.remove("lightbox-open");
+    lastFocusedItem?.focus();
+  };
+
+  const openLightbox = (item) => {
+    const image = item.querySelector("img");
+    const title = item.querySelector("strong")?.textContent || image?.alt || "Proyecto modular";
+
+    if (!image) return;
+
+    lastFocusedItem = item;
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+    lightboxCaption.textContent = title;
+    lightbox.hidden = false;
+    document.body.classList.add("lightbox-open");
+    closeButton.focus();
+  };
+
+  items.forEach((item) => {
+    item.tabIndex = 0;
+    item.setAttribute("role", "button");
+    item.setAttribute("aria-label", `Ver imagen ampliada de ${item.querySelector("strong")?.textContent || "proyecto"}`);
+
+    item.addEventListener("click", () => openLightbox(item));
+    item.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openLightbox(item);
+      }
+    });
+  });
+
+  closeButton.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !lightbox.hidden) {
+      closeLightbox();
+    }
+  });
 });
 
 const chileRegions = {

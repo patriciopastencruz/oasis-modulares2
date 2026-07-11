@@ -77,6 +77,44 @@ nav a:hover {
   opacity: 1;
 }
 
+.nav-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 8px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.14);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background: #ffffff;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.nav-toggle span + span {
+  margin-top: 5px;
+}
+
+.site-header.nav-open .nav-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-header.nav-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header.nav-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 .hero {
   position: relative;
   min-height: max(700px, 100svh);
@@ -114,11 +152,17 @@ nav a:hover {
 
 .eyebrow {
   margin: 0 0 14px;
-  color: var(--sand);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  color: var(--navy);
+  font-size: 0.94rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
+}
+
+.hero .eyebrow,
+.contact-band .eyebrow,
+.thanks-card .eyebrow {
+  color: #8fd0ff;
 }
 
 h1,
@@ -188,6 +232,14 @@ h3 {
   background: var(--brand-dark);
 }
 
+.hero-actions .button.primary {
+  background: #2d91dc;
+}
+
+.hero-actions .button.primary:hover {
+  background: #2479bd;
+}
+
 .button.secondary {
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.48);
@@ -209,6 +261,7 @@ h3 {
   grid-template-columns: minmax(0, 0.95fr) minmax(300px, 1.2fr);
   gap: clamp(34px, 6vw, 90px);
   align-items: start;
+  background: linear-gradient(180deg, #eef8ff 0%, #f7fbff 100%);
 }
 
 .benefits {
@@ -222,7 +275,7 @@ h3 {
   gap: 16px;
   align-items: start;
   padding: 0 0 18px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(45, 145, 220, 0.18);
 }
 
 .benefit-icon {
@@ -231,8 +284,8 @@ h3 {
   height: 46px;
   place-items: center;
   border-radius: 8px;
-  color: var(--brand);
-  background: rgba(47, 95, 69, 0.1);
+  color: #2d91dc;
+  background: rgba(45, 145, 220, 0.12);
 }
 
 .benefit-icon svg {
@@ -244,6 +297,39 @@ h3 {
   stroke-linejoin: round;
 }
 
+.mission-vision {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.mission-card {
+  padding: 26px;
+  border: 1px solid rgba(45, 145, 220, 0.2);
+  border-left: 5px solid var(--logo-blue);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 14px 38px rgba(45, 145, 220, 0.1);
+}
+
+.mission-card span {
+  display: inline-flex;
+  margin-bottom: 14px;
+  color: var(--logo-blue);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.mission-card h3 {
+  margin-bottom: 12px;
+  color: var(--navy);
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
 .benefits strong,
 .steps strong {
   display: block;
@@ -252,8 +338,10 @@ h3 {
 }
 
 .benefits p,
+.mission-card p,
 .solution p,
 .steps p,
+.faq-list p,
 .contact-band p {
   margin-bottom: 0;
   color: var(--muted);
@@ -265,7 +353,7 @@ h3 {
 }
 
 .gallery {
-  background: #f2eee3;
+  background: linear-gradient(180deg, #eef8ff 0%, #f7fbff 100%);
 }
 
 .section-heading {
@@ -353,6 +441,7 @@ h3 {
   color: var(--navy);
   font-size: 1.02rem;
   line-height: 1.25;
+  min-height: 2.55rem;
   text-transform: uppercase;
 }
 
@@ -743,7 +832,13 @@ h3 {
   border-radius: 8px;
   background: #172019;
   box-shadow: var(--shadow);
+  cursor: zoom-in;
   transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.gallery-item:focus-visible {
+  outline: 4px solid rgba(45, 145, 220, 0.45);
+  outline-offset: 4px;
 }
 
 .gallery-item img {
@@ -797,6 +892,104 @@ h3 {
   line-height: 1.35;
 }
 
+.project-video {
+  display: grid;
+  gap: 22px;
+  margin-top: clamp(34px, 5vw, 58px);
+}
+
+.project-video h3 {
+  margin-bottom: 0;
+  color: var(--navy);
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+}
+
+.tiktok-videos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.tiktok-frame {
+  min-height: 560px;
+  overflow: hidden;
+  border: 1px solid rgba(45, 145, 220, 0.18);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 44px rgba(32, 38, 87, 0.1);
+}
+
+.tiktok-frame .tiktok-embed {
+  margin: 0 auto !important;
+}
+
+.project-lightbox[hidden] {
+  display: none;
+}
+
+.project-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 4vw, 56px);
+  background: rgba(8, 14, 11, 0.86);
+  backdrop-filter: blur(8px);
+}
+
+.project-lightbox-content {
+  display: grid;
+  gap: 14px;
+  width: min(1120px, 100%);
+  margin: 0;
+  color: #ffffff;
+}
+
+.project-lightbox-content img {
+  display: block;
+  width: 100%;
+  max-height: 82svh;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #111816;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+}
+
+.project-lightbox-content figcaption {
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.project-lightbox-close {
+  position: fixed;
+  top: clamp(16px, 3vw, 28px);
+  right: clamp(16px, 3vw, 28px);
+  z-index: 1;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.project-lightbox-close:hover,
+.project-lightbox-close:focus-visible {
+  background: var(--logo-blue);
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
 .solution {
   min-height: 270px;
   padding: 28px;
@@ -814,7 +1007,60 @@ h3 {
 }
 
 .process {
-  background: #edf0e8;
+  background: #ffffff;
+}
+
+.faq {
+  background: #ffffff;
+}
+
+.faq-list {
+  display: grid;
+  gap: 14px;
+  max-width: 980px;
+}
+
+.faq-list details {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f9fafb;
+  box-shadow: 0 12px 30px rgba(32, 38, 87, 0.08);
+}
+
+.faq-list summary {
+  position: relative;
+  padding: 20px 54px 20px 20px;
+  color: var(--navy);
+  font-weight: 900;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: var(--logo-blue);
+  transform: translateY(-50%);
+}
+
+.faq-list details[open] summary::after {
+  content: "-";
+}
+
+.faq-list p {
+  padding: 0 20px 20px;
 }
 
 .steps {
@@ -844,7 +1090,7 @@ h3 {
   place-items: center;
   border-radius: 8px;
   color: #ffffff;
-  background: var(--brand);
+  background: var(--navy);
   font-weight: 800;
 }
 
@@ -855,7 +1101,7 @@ h3 {
   align-items: start;
   padding: clamp(64px, 8vw, 96px) clamp(18px, 5vw, 72px);
   color: #ffffff;
-  background: var(--brand-dark);
+  background: var(--navy);
 }
 
 .contact-band h2 {
@@ -924,9 +1170,14 @@ h3 {
   background: #ffffff;
 }
 
-.submit-button {
+.button.primary.submit-button {
   border: 0;
+  background: #2d91dc;
   cursor: pointer;
+}
+
+.button.primary.submit-button:hover {
+  background: #2479bd;
 }
 
 .submit-button[disabled] {
@@ -1227,6 +1478,53 @@ h3 {
   animation: online-radar 1.8s ease-out infinite;
 }
 
+.thanks-page {
+  min-height: 100svh;
+  background:
+    linear-gradient(120deg, rgba(24, 55, 40, 0.92), rgba(32, 38, 87, 0.84)),
+    url("assets/hero-modular-home.png") center / cover;
+}
+
+.thanks-view {
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  padding: clamp(24px, 5vw, 72px);
+}
+
+.thanks-logo {
+  position: absolute;
+  top: clamp(18px, 4vw, 44px);
+  left: clamp(18px, 4vw, 56px);
+}
+
+.thanks-logo img {
+  display: block;
+  width: min(260px, 72vw);
+}
+
+.thanks-card {
+  width: min(680px, 100%);
+  border-radius: 8px;
+  padding: clamp(28px, 5vw, 56px);
+  color: #ffffff;
+  background: rgba(12, 20, 16, 0.72);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(12px);
+}
+
+.thanks-card h1 {
+  margin-bottom: 18px;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+}
+
+.thanks-card p:not(.eyebrow) {
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
 @keyframes online-radar {
   0% {
     opacity: 0.9;
@@ -1264,6 +1562,10 @@ h3 {
 
   .intro,
   .contact-band {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-vision {
     grid-template-columns: 1fr;
   }
 
@@ -1305,6 +1607,9 @@ h3 {
 @media (max-width: 620px) {
   .site-header {
     position: absolute;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
     padding-top: 14px;
   }
 
@@ -1312,17 +1617,41 @@ h3 {
     width: min(230px, 74vw);
   }
 
+  .nav-toggle {
+    display: grid;
+  }
+
   nav {
-    width: 100%;
-    justify-content: space-between;
+    display: none;
+    grid-column: 1 / -1;
+    width: min(100%, 340px);
+    justify-self: end;
+    flex-direction: column;
+    align-items: stretch;
     gap: 8px;
-    overflow-x: auto;
-    padding-bottom: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    padding: 10px;
+    background: rgba(12, 20, 16, 0.92);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.26);
+    backdrop-filter: blur(14px);
+  }
+
+  .site-header.nav-open nav {
+    display: flex;
   }
 
   nav a {
-    flex: 0 0 auto;
-    font-size: 0.86rem;
+    width: 100%;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    opacity: 1;
+  }
+
+  nav a:hover,
+  nav a:focus-visible {
+    background: rgba(45, 145, 220, 0.22);
   }
 
   .hero {
@@ -1381,8 +1710,8 @@ h3 {
   }
 
   .eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
+    font-size: 0.82rem;
+    letter-spacing: 0.09em;
   }
 
   .solution-grid,
@@ -1391,8 +1720,27 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .gallery-grid {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding: 4px 4px 18px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+
   .gallery-item {
+    flex: 0 0 min(78vw, 310px);
     min-height: 0;
+    scroll-snap-align: start;
+  }
+
+  .tiktok-videos {
+    grid-template-columns: 1fr;
+  }
+
+  .tiktok-frame {
+    min-height: 520px;
   }
 
   .solution {
