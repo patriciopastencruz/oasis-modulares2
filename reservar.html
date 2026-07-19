@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Completa tus datos para reservar tu proyecto modular con Oasis Modulares.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Reservar proyecto | Oasis Modulares</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="product-page">
+    <header class="site-header" aria-label="Navegación principal">
+      <a class="brand" href="index.html#inicio" aria-label="Oasis Modulares inicio">
+        <img src="assets/logo-oasis-modulares-header.png" alt="Oasis Modulares">
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="primary-navigation">
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="index.html#modelos">Modelos</a>
+        <a href="index.html#proyectos">Proyectos</a>
+        <a href="index.html#proceso">Proceso</a>
+        <a href="index.html#preguntas">Preguntas Frecuentes</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main class="product-detail">
+      <div class="breadcrumbs">
+        <a href="index.html">Inicio</a>
+        <span>›</span>
+        <a href="index.html#modelos">Modelos</a>
+        <span>›</span>
+        <strong>Reservar</strong>
+      </div>
+
+      <section class="section" style="padding-top: 8px;" aria-label="Formulario de reserva">
+        <div style="max-width: 760px; margin: 0 auto;">
+          <p class="eyebrow">Reserva tu proyecto</p>
+          <h1 style="font-size: clamp(2rem, 3.5vw, 2.75rem);">Completa tus datos para reservar</h1>
+          <p class="hero-copy" style="color: var(--muted); margin-bottom: 34px;">
+            Ingresa tus datos y el producto que te interesa. Al continuar, te llevaremos a Mercado Pago
+            para completar el pago de tu reserva de <strong>$100.000</strong>.
+          </p>
+
+          <form
+            class="contact-form"
+            action="https://formsubmit.co/oasismodulares@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="Nueva reserva desde Oasis Modulares">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_url" value="https://oasismodulareschile.cl/reservar.html">
+            <input type="hidden" name="_next" value="https://mpago.la/1dDnVXu">
+
+            <div class="field full">
+              <label for="producto">Producto de interés</label>
+              <select id="producto" name="Producto de interés" required>
+                <option value="">Selecciona una opción</option>
+                <option data-slug="oficina-modular">Oficina Modular (A)</option>
+                <option data-slug="oficina-modular-importada">Oficina Modular (B)</option>
+                <option data-slug="modular-2">Bodega Modular</option>
+                <option data-slug="habitacion-modular">Modular con Baño (B)</option>
+                <option data-slug="habitacion-modular-con-bano">Habitacion Modular con Baño</option>
+                <option data-slug="oficina-modular-4x3">Oficina Modular 4x3 (B)</option>
+                <option data-slug="casa-modular-36m2">Casa Modular 36 mt2 (B)</option>
+                <option data-slug="casa-modular-36m2-a">Casa Modular 36 mt2 (A)</option>
+                <option data-slug="caseta-seguridad">Caseta de seguridad</option>
+                <option data-slug="camarin-modular">Camarín Modular con Duchas</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="nombre">Nombre completo</label>
+              <input id="nombre" name="Nombre" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Correo</label>
+              <input id="email" name="Correo" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="telefono">Teléfono</label>
+              <input id="telefono" name="Teléfono" type="tel" autocomplete="tel" required>
+            </div>
+            <div class="field full">
+              <label for="fecha_entrega">Fecha estimada de entrega deseada</label>
+              <input id="fecha_entrega" name="Fecha estimada de entrega" type="date">
+            </div>
+            <button class="button primary full submit-button" type="submit">Continuar al pago</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <a class="whatsapp-float" href="https://wa.me/56939468154" aria-label="Contactar por WhatsApp">
+      <img src="assets/logo-whatsapp.png" alt="">
+    </a>
+    <script src="scripts.js"></script>
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var slug = params.get("producto");
+        if (!slug) return;
+        var select = document.getElementById("producto");
+        if (!select) return;
+        for (var i = 0; i < select.options.length; i++) {
+          if (select.options[i].dataset.slug === slug) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
