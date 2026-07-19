@@ -175,8 +175,8 @@ p {
 h1 {
   max-width: 760px;
   margin-bottom: 22px;
-  font-size: clamp(3rem, 6vw, 5.5rem);
-  line-height: 0.97;
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  line-height: 1.05;
   letter-spacing: 0;
 }
 
