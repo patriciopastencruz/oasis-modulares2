@@ -1482,7 +1482,7 @@ body.lightbox-open {
   min-height: 100svh;
   background:
     linear-gradient(120deg, rgba(24, 55, 40, 0.92), rgba(32, 38, 87, 0.84)),
-    url("assets/hero-modular-home.png") center / cover;
+    url("assets/hero-modular-home.jpg") center / cover;
 }
 
 .thanks-view {

@@ -62,7 +62,10 @@ document.querySelectorAll("[data-gallery]").forEach((gallery) => {
 
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const track = carousel.querySelector(".product-track");
-  const cards = Array.from(carousel.querySelectorAll(".product-card"));
+  const cards = Array.from(carousel.querySelectorAll(".product-card")).sort(
+    (a, b) => Number(a.dataset.productOrder) - Number(b.dataset.productOrder),
+  );
+  cards.forEach((card) => track.append(card));
   const prev = carousel.querySelector(".prev");
   const next = carousel.querySelector(".next");
   const dots = carousel.querySelector(".carousel-dots");
