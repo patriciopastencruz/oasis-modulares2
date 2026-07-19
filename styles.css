@@ -183,8 +183,8 @@ h1 {
 h2 {
   max-width: 780px;
   margin-bottom: 0;
-  font-size: clamp(1.4rem, 1.9vw, 2rem);
-  line-height: 1.25;
+  font-size: clamp(1.75rem, 2.2vw, 2.5rem);
+  line-height: 1.2;
   letter-spacing: 0;
 }
 
@@ -253,7 +253,7 @@ h3 {
 }
 
 .section {
-  padding: clamp(72px, 10vw, 128px) clamp(18px, 5vw, 72px);
+  padding: clamp(48px, 6vw, 84px) clamp(18px, 5vw, 72px);
 }
 
 .intro {
