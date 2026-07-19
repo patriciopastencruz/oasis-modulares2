@@ -665,9 +665,13 @@ h3 {
 }
 
 .detail-button.secondary {
-  color: var(--navy);
-  background: #ffffff;
+  color: #ffffff;
+  background: var(--navy);
   backdrop-filter: none;
+}
+
+.detail-button.secondary:hover {
+  background: #14192f;
 }
 
 .detail-copy,
